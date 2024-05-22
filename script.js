@@ -16,7 +16,13 @@ function scrollToPrev() {
         sliderIndex--;
     }
 
-    sliderElements[sliderIndex].scrollIntoView();
+    if(!isVisible(sliderElements[sliderIndex].getBoundingClientRect())) {
+        sliderElements[sliderIndex].scrollIntoView();
+    } else {
+        scrollToPrev();
+    }
+
+    console.log(sliderIndex)
 }
 
 function scrollToNext() {
@@ -28,8 +34,23 @@ function scrollToNext() {
         sliderIndex++;
     }
 
-    console.log(sliderIndex);
-    sliderElements[sliderIndex].scrollIntoView();
+    if(!isVisible(sliderElements[sliderIndex].getBoundingClientRect())) {
+        sliderElements[sliderIndex].scrollIntoView();
+    } else {
+        scrollToNext();
+    }
+
+    console.log(sliderIndex)
+}
+
+function isVisible(rect) {
+    if(rect.x >= 0 && window.innerWidth > rect.x + rect.width) {
+        console.log("isVisible");
+    } else {
+        console.log("notVisible")
+    }
+
+    return rect.x >= 0 && window.innerWidth > rect.x + rect.width;
 }
 
 buttonPrev.addEventListener("click", scrollToPrev);
