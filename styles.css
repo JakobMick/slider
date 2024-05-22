@@ -43,6 +43,7 @@ html {
     grid-auto-columns: min-content;
     gap: 20px;
     scroll-behavior: smooth;
+    padding-bottom: 14px;
 }
 
 /* BUTTONS */
