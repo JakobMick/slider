@@ -34,7 +34,7 @@ html {
 
 .slider {
     display: grid;
-    grid-template-rows: 75px;
+    grid-template-rows: fit-content;
     grid-template-columns: repeat(3, minmax(0, auto));
     overflow-x: auto;
     grid: auto / auto-flow 100%;
@@ -110,6 +110,7 @@ html {
     display: flex;
     place-content: center;
     border-left: 1px solid var(--color-black);
+    width: 350px;
 }
 
 .card-image img {
