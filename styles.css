@@ -4,6 +4,7 @@
     --color-gray: #F1F1F1;
     --color-primary: #5900E7;
     --color-secondary: #7CE2FD;
+    --border: 1px solid var(--color-black);
 }
 
 @font-face {
@@ -62,7 +63,7 @@ html {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px; /* 137.5% */
+    line-height: 22px;
     text-decoration: none;
 }
 
@@ -92,7 +93,7 @@ html {
     justify-content: space-between;
     background-color: var(--color-gray);
     border-radius: 20px;
-    border: 1px solid var(--color-black);
+    border: var(--border);
     overflow: hidden;
     min-width: fit-content;
 }
@@ -109,7 +110,7 @@ html {
     background-color: var(--color-secondary);
     display: flex;
     place-content: center;
-    border-left: 1px solid var(--color-black);
+    border-left: var(--border);
     width: 350px;
 }
 
@@ -128,7 +129,7 @@ html {
     background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 0px 0px 25px 25px;
-    border: 1px solid var(--color-black);
+    border: var(--border);
 }
 
 .card-title {
@@ -143,7 +144,7 @@ html {
     font-size: 19px;
     font-style: normal;
     font-weight: 400;
-    line-height: 27.5px; /* 144.737% */
+    line-height: 27.5px;
     letter-spacing: 0.38px;
     margin-top: 20px;
     margin-bottom: 20px
