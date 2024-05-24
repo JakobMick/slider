@@ -8,7 +8,7 @@ var sliderIndex = 0;
 console.log(sliderElements)
 
 function scrollToPrev() {
-    console.log("prev");
+    let tempIndex = sliderIndex;
 
     if(sliderIndex <= 0) {
         sliderIndex = sliderElements.length - 1;
@@ -16,17 +16,23 @@ function scrollToPrev() {
         sliderIndex--;
     }
 
-    if(!isVisible(sliderElements[sliderIndex].getBoundingClientRect())) {
+    let rect = sliderElements[sliderIndex].getBoundingClientRect();
+
+    console.log(window.innerWidth)
+    console.log(rect.x)
+    console.log(rect.width)
+    console.log(0 < rect.x + rect.width)
+    console.log(rect.x < window.innerWidth || tempIndex == 0)
+
+    if( (rect.x + rect.width < 0 || tempIndex == 0)) {
         sliderElements[sliderIndex].scrollIntoView();
     } else {
         scrollToPrev();
     }
-
-    console.log(sliderIndex)
 }
 
 function scrollToNext() {
-    console.log("next");
+    let tempIndex = sliderIndex;
 
     if(sliderIndex >= sliderElements.length - 1) {
         sliderIndex = 0;
@@ -34,16 +40,17 @@ function scrollToNext() {
         sliderIndex++;
     }
 
-    if(!isVisible(sliderElements[sliderIndex].getBoundingClientRect())) {
+    let rect = sliderElements[sliderIndex].getBoundingClientRect();
+
+    if((window.innerWidth < rect.x + rect.width) || (rect.x > 0 || tempIndex == sliderElements.length - 1)) {
         sliderElements[sliderIndex].scrollIntoView();
     } else {
         scrollToNext();
     }
-
-    console.log(sliderIndex)
 }
 
 function isVisible(rect) {
+
     if(rect.x >= 0 && window.innerWidth > rect.x + rect.width) {
         console.log("isVisible");
     } else {
