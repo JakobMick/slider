@@ -18,12 +18,6 @@ function scrollToPrev() {
 
     let rect = sliderElements[sliderIndex].getBoundingClientRect();
 
-    console.log(window.innerWidth)
-    console.log(rect.x)
-    console.log(rect.width)
-    console.log(0 < rect.x + rect.width)
-    console.log(rect.x < window.innerWidth || tempIndex == 0)
-
     if( (rect.x + rect.width < 0 || tempIndex == 0)) {
         sliderElements[sliderIndex].scrollIntoView();
     } else {
@@ -47,17 +41,6 @@ function scrollToNext() {
     } else {
         scrollToNext();
     }
-}
-
-function isVisible(rect) {
-
-    if(rect.x >= 0 && window.innerWidth > rect.x + rect.width) {
-        console.log("isVisible");
-    } else {
-        console.log("notVisible")
-    }
-
-    return rect.x >= 0 && window.innerWidth > rect.x + rect.width;
 }
 
 buttonPrev.addEventListener("click", scrollToPrev);
