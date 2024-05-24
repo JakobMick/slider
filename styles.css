@@ -47,8 +47,14 @@ html {
     grid-auto-columns: max-content;
     gap: 20px;
     scroll-behavior: smooth;
-    padding-bottom: 14px;
     scroll-padding: 0px 1px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slider::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 /* BUTTONS */
