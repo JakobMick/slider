@@ -16,6 +16,10 @@
       url("/assets/PPObjectSans/PPObjectSans-Regular.woff2") format("woff2");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
@@ -40,7 +44,7 @@ html {
     overflow-x: auto;
     grid: auto / auto-flow 100%;
     grid-auto-flow: column;
-    grid-auto-columns: min-content;
+    grid-auto-columns: max-content;
     gap: 20px;
     scroll-behavior: smooth;
     padding-bottom: 14px;
@@ -105,6 +109,7 @@ html {
     flex-direction: column;
     padding: 0 27px;
     min-width: 300px;
+    max-width: 350px;
 }
 
 .card-image {
