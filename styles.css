@@ -226,4 +226,9 @@ html {
         min-width: unset;
         border-left: var(--border);
     }
+
+    .card-image img {
+        height: unset;
+        width: 50%;
+    }
 }
