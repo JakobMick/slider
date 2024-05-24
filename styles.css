@@ -77,13 +77,22 @@ html {
     font-weight: 400;
     line-height: 22px;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.button-row>a:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: var(--border);
 }
 
 .slider-buttons {
     position: absolute;
     margin: 0px auto;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,7 +100,15 @@ html {
 }
 
 .icon-arrow {
-    height: 100%;
+    background-color: var(--color-white);
+    border: var(--border);
+    border-radius: 55px;
+}
+
+.icon-arrow:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .icon-arrow.arrow-left {
@@ -168,10 +185,17 @@ html {
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
+    width: fit-content;
     margin-top: auto;
     margin-bottom: 47px;
+    cursor: pointer;
 }
 
 .card-button img {
-    padding-left: 12px
+    transition: padding-left 250ms ease-in-out;
+    padding-left: 12px;
+}
+
+.card-button:hover img {
+    padding-left: 24px;
 }
