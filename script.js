@@ -18,7 +18,7 @@ function scrollToPrev() {
 
     let rect = sliderElements[sliderIndex].getBoundingClientRect();
 
-    if( (rect.x + rect.width < 0 || tempIndex == 0)) {
+    if( (rect.x + rect.width < 0 + rect.width || tempIndex == 0)) {
         sliderElements[sliderIndex].scrollIntoView();
     } else {
         scrollToPrev();
@@ -36,7 +36,7 @@ function scrollToNext() {
 
     let rect = sliderElements[sliderIndex].getBoundingClientRect();
 
-    if((window.innerWidth < rect.x + rect.width) || (rect.x > 0 || tempIndex == sliderElements.length - 1)) {
+    if((window.innerWidth < rect.x + rect.width) || (tempIndex == sliderElements.length - 1)) {
         sliderElements[sliderIndex].scrollIntoView();
     } else {
         scrollToNext();
