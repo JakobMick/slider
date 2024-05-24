@@ -145,6 +145,7 @@ html {
     background-color: var(--color-secondary);
     display: flex;
     place-content: center;
+    min-width: 100%;
 }
 
 .card-image img {
@@ -222,6 +223,7 @@ html {
 
     .card-image {
         width: 350px;
+        min-width: unset;
         border-left: var(--border);
     }
 }
